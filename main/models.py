@@ -62,7 +62,7 @@ class Livro(models.Model):
     autor = models.ForeignKey(Autor, models.DO_NOTHING, db_column='autor', blank=True, null=True)
     categoria = models.ForeignKey(Categoria, models.DO_NOTHING, db_column='categoria', blank=True, null=True)
     editora = models.ForeignKey(Editora, models.DO_NOTHING, db_column='editora', blank=True, null=True)
-    capa = models.ImageField(_upload_to=None, height_field=None, width_field=None, max_length=None)                   
+    capa = models.TextField(blank=True, null=True)
     data_compra = models.DateField(blank=True, null=True)
     avaliacao = models.CharField(max_length=1, blank=True, null=True, choices=STATUS)
     descricao = models.TextField(blank=True, null=True)
