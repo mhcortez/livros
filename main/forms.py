@@ -7,8 +7,8 @@ class Frm_Autor(forms.ModelForm):
         model = Autor
         fields = ['nome', 'comentario']
         
-    def __init__(self, name, age):      
-      super().__init__(self, *args, **kargs):
+    def __init__(self, *args, **kwargs):    
+      super().__init__(self, *args, **kwargs)
       self.fields['nome'].widget.attrs.update({'class':'form-control'})
       self.fields['comentario'].widget.attrs.update({'class':'form-control'})
 
@@ -18,8 +18,8 @@ class Frm_Categoria(forms.ModelForm):
         model = Categoria
         fields = ['nome']
         
-    def __init__(self, name, age):      
-      super().__init__(self, *args, **kargs):
+    def __init__(self, *args, **kwargs):      
+      super().__init__(self, *args, **kwargs)
       self.fields['nome'].widget.attrs.update({'class':'form-control'})
 
 class Frm_Editora(forms.ModelForm):
@@ -28,7 +28,7 @@ class Frm_Editora(forms.ModelForm):
         model = Editora
         fields = ['nome', 'comentario']
         
-    def __init__(self, name, age):      
-      super().__init__(self, *args, **kargs):
+    def __init__(self, *args, **kwargs):     
+      super().__init__(self, *args, **kwargs)
       self.fields['nome'].widget.attrs.update({'class':'form-control'})      
     
