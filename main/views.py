@@ -8,7 +8,7 @@ from django.views.generic.edit import CreateView, UpdateView
 # Create your views here.
 
 def autorTodos(request) :
-    autor_todos = Autor.objects.all().order_by('nome')
+    autor_todos = Autor.objects.all()
     return render(request, 'main/autor_todos.html',{'autor_todos': autor_todos})
 
 def autorId(request, id):

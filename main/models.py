@@ -4,8 +4,7 @@ from django.contrib.auth import get_user_model
 
 class Autor(models.Model):
     nome = models.CharField(max_length=100)
-    comentario = models.TextField(blank=True, null=True)
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    comentario = models.TextField(blank=True, null=True)    
     data_cadastro = models.DateField(auto_now_add=True)
     
     class Meta:
@@ -18,8 +17,7 @@ class Autor(models.Model):
 
 
 class Categoria(models.Model):
-    nome = models.CharField(max_length=100)
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    nome = models.CharField(max_length=100)    
     data_cadastro = models.DateField(auto_now_add=True)
     
     class Meta:
@@ -33,7 +31,7 @@ class Categoria(models.Model):
 
 class Editora(models.Model):
     nome = models.CharField(max_length=100)
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    #user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     data_cadastro = models.DateField(auto_now_add=True)
     
     class Meta:
