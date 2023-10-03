@@ -19,7 +19,7 @@ class Frm_Categoria(forms.ModelForm):
         fields = ['nome']
         
     def __init__(self, *args, **kwargs):      
-        super().__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.fields['nome'].widget.attrs.update({'class':'form-control'})
 
 class Frm_Editora(forms.ModelForm):
@@ -29,6 +29,6 @@ class Frm_Editora(forms.ModelForm):
         fields = ['nome', 'comentario']
         
     def __init__(self, *args, **kwargs):     
-        super().__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.fields['nome'].widget.attrs.update({'class':'form-control'})      
     

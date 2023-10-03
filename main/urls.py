@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import autorTodos , autorId, autor_create, autor_delete, autor_update
+from .views import autorTodos, autor_create, autor_delete, autor_update
 
 urlpatterns = [
     path('autores', views.autorTodos, name='autores'),
