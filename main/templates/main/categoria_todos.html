@@ -17,6 +17,7 @@
       <tbody>
         {% for autor in autor_todos %}      
           <tr>
+              <td><a href="/autorId/{{autor.id}}">{{ autor.nome }}</td>
               <td><a href="/autor/{{ autor.id }}/update/"><span><i class="fas fa-edit"></i></span> </td>
               <td><a href="/autor/{{ autor.id }}/delete/"><span><i class="fas fa-trash"></i></span></td>
           </tr>

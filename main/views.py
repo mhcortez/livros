@@ -1,5 +1,6 @@
 from .models import Editora, Categoria, Autor
 from .forms import Frm_Autor, Frm_Categoria, Frm_Editora
+from django.http import HttpResponse
 
 from django.shortcuts import render , redirect , get_object_or_404
 from django.urls import reverse, reverse_lazy
@@ -11,18 +12,13 @@ def autorTodos(request) :
     autor_todos = Autor.objects.all()
     return render(request, 'main/autor_todos.html',{'autor_todos': autor_todos})
 
-def autorId(request, id):
-    autor_id = get_object_or_404(Autor, pk=id)
-    return render(request,'main/autorID.html',{'autor_id':autor_id})
-
 def autor_create(request):
     if request.method == 'POST':
         form = Frm_Autor(request.POST)
         if form.is_valid():
-            autor = form.save(commit=False)
-            autor.user = request.user
+            autor = form.save(commit=False)            
             autor.save()
-            return redirect(reverse('autorTodos'))
+            return redirect(reverse('autores'))
     else:
         form = Frm_Autor()
     
@@ -38,7 +34,7 @@ def autor_update(request, id):
 
         if (form.is_valid()):
             autor.save()
-            return redirect('/')
+            return redirect('autores')
         else:
             return render(request, 'main/autor_form.html', {'form' : form, 'autor': autor})
     else:
@@ -47,4 +43,4 @@ def autor_update(request, id):
 def autor_delete(request, id):
     autor = get_object_or_404(Autor, pk=id)
     autor.delete()
-    return redirect('/')
+    return redirect('autores')
